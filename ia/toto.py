@@ -6,9 +6,10 @@ nlp = spacy.load("en_core_web_sm")
 def detecter_salutation(message):
     # Traiter le message avec le modèle spaCy
     doc = nlp(message)
-
+    print(doc)
     # Vérifier si le message contient une salutation
     for token in doc:
+        print(token)
         if token.text.lower() in ["bonjour", "salut", "coucou", "hello"]:
             return True
 
